@@ -16,12 +16,12 @@ public class ZipUtil {
 
 	private static String startDir;
 
-	public static void mkZip(String srcPath, String zipPathName) {
+	public static void mkZip(String srcPath, String zipName) {
 		File file = new File(srcPath);
 		if (file.exists()) {
 			System.out.println(" Starting to zip directory " + srcPath + "...");
 			try {
-				FileOutputStream fos = new FileOutputStream(new File(zipPathName));
+				FileOutputStream fos = new FileOutputStream(new File(zipName));
 				CheckedOutputStream cos = new CheckedOutputStream(fos, new CRC32());
 				ZipOutputStream zos = new ZipOutputStream(cos);
 				String basedir = "";
